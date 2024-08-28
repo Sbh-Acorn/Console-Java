@@ -1,0 +1,26 @@
+{
+    "user001": {
+        "name": "소병학",
+        "password": "password123!",
+        "grade": "gold",
+        "ageGroup": "성인"
+    },
+    "user002": {
+        "name": "주상길",
+        "password": "securePass456@",
+        "grade": "silver",
+        "ageGroup": "청소년"
+    },
+    "user003": {
+        "name": "전우선",
+        "password": "pass789#",
+        "grade": "bronze",
+        "ageGroup": "아이/노인"
+    },
+    "user004": {
+        "name": "송수빈",
+        "password": "myPass012$",
+        "grade": "gold",
+        "ageGroup": "성인"
+    }
+}
