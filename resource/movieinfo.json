@@ -1,0 +1,42 @@
+{
+    "Inception": {
+        "movieRating": "PG-13",
+        "genre": "Science Fiction",
+        "runningTime": "148 minutes",
+        "releaseDate": "2010-07-16",
+        "theaters": [
+            "Theater A",
+            "Theater B"
+        ]
+    },
+    "Parasite": {
+        "movieRating": "R",
+        "genre": "Thriller",
+        "runningTime": "132 minutes",
+        "releaseDate": "2019-05-30",
+        "theaters": [
+            "Theater A",
+            "Theater B"
+        ]
+    },
+    "Interstellar": {
+        "movieRating": "PG-13",
+        "genre": "Adventure",
+        "runningTime": "169 minutes",
+        "releaseDate": "2014-11-07",
+        "theaters": [
+            "Theater A",
+            "Theater B"
+        ]
+    },
+    "The Dark Knight": {
+        "movieRating": "PG-13",
+        "genre": "Action",
+        "runningTime": "152 minutes",
+        "releaseDate": "2008-07-18",
+        "theaters": [
+            "Theater A",
+            "Theater B"
+        ]
+    }
+}
