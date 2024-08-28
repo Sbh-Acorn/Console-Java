@@ -1,6 +1,7 @@
 package mainFunc;
 
 import com.google.gson.Gson;
+
 import com.google.gson.reflect.TypeToken;
 
 import java.io.FileReader;
@@ -13,13 +14,19 @@ import java.util.Scanner;
 public class SelectMovie implements ConsolePrint {
 	
     // main 메서드 추가
-    public static void main(String[] args) {
-        SelectMovie selectMovie = new SelectMovie();
-        selectMovie.print(); // print 메서드 호출
-    }
+//    public static void main(String[] args) {
+//        SelectMovie selectMovie = new SelectMovie();
+//        selectMovie.print(); // print 메서드 호출
+//    }
+	private String userId;
+	
+	public SelectMovie(String id) {
+		userId=id;
+	}
     @Override
     public void print() {
-        System.out.println("영화를 선택해 주세요!");
+    	
+        System.out.println(userId+"님 영화를 선택해 주세요!");
 
         // 로컬 파일 시스템에서 JSON 파일 불러오기
         String filePath = "resource/movieinfo.json"; // 파일 경로를 지정하세요.
@@ -34,10 +41,16 @@ public class SelectMovie implements ConsolePrint {
             
             List<String> movieNames = new ArrayList<>(movies.keySet());
             // 영화 정보 출력
+            
             for (int i = 0; i < movieNames.size(); i++) {
-                System.out.println((i + 1) + ". " + movieNames.get(i));
+            	
+            	String mn=movieNames.get(i);
+            	Movie m =movies.get(mn);
+            	//여기서 movies.get(mn)은 Movie객체를 가져오도록해놓았음
+                System.out.println((i + 1) + ". " +mn+"("+m.getMovieRating()+")");
             }
-            int i=1;
+            
+//            int i=1;
 //            for (String movieName : movies.keySet()) {
 //                System.out.print(i+"." + movieName+"	");
 //                Movie movie = movies.get(movieName);
@@ -53,9 +66,12 @@ public class SelectMovie implements ConsolePrint {
                 String selectedMovieName = movieNames.get(select - 1);
                 
                 System.out.println("선택한 영화: " + selectedMovieName);
+                Movie selectm=movies.get(selectedMovieName);
+                selectm.setMovieName(selectedMovieName);
+                SelectTheather st= new SelectTheather(selectm);
             } else {
                 System.out.println("잘못된 번호입니다.");
-            }
+            }   
             //JSON 데이터를 Java Map으로 변환
 //          Type type = new TypeToken<Map<String, Object>>() {}.getType();
 //          Map<String, Object> movies = gson.fromJson(reader, type);
