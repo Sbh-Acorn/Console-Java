@@ -2,7 +2,7 @@ package mainFunc;
 
 import java.util.List;
 
-public class Movie {
+public class Movie1 {
     private String title; // 영화 제목
     private String genre; // 영화 장르
     private int duration; // 상영 시간 (분 단위)
@@ -10,7 +10,7 @@ public class Movie {
     private List<Showtime> showtimes; // 상영 시간 및 상영관 리스트
 
     // 생성자
-    public Movie(String title, String genre, int duration, String rating, List<Showtime> showtimes) {
+    public Movie1(String title, String genre, int duration, String rating, List<Showtime> showtimes) {
         this.title = title;
         this.genre = genre;
         this.duration = duration;
