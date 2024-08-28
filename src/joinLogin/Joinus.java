@@ -10,6 +10,10 @@ public class Joinus {
 
     public static void main(String[] args) {
         while (true) {
+        	System.out.println("acorn에 오신걸 환영합니다");
+        	System.out.println("   메뉴를 선택해주세요   ");
+        	System.out.println();
+        	
             System.out.println("=======메뉴 선택=======");
             System.out.println("    1. 회원 가입       ");
             System.out.println("    2. 로그인         ");
