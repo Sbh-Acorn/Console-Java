@@ -3,6 +3,8 @@ package main;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+
+import joinLogin.User;
 import mainFunc.Movie1;
 import mainFunc.MovieSelection;
 import mainFunc.Showtime;
@@ -110,6 +112,11 @@ public class MovieReservationSystem {
 
         scanner.close(); // Scanner 닫기
     }
+
+	public static void startMovieReservation(User loggedInUser) {
+		
+		
+	}
 }
 
 
