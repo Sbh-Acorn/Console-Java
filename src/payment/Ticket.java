@@ -2,7 +2,7 @@ package payment;
 
 public class Ticket extends Paper {	
 	
-	String title = "[영화 입장권]";
+	String title = "영화 입장권";
 	
 	//임시지정
 	String movie_title_kor = "토이스토리";
