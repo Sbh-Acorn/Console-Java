@@ -66,7 +66,16 @@ public class Payment implements ConsolePrint {
         }
 
         // 영수증 출력
-        System.out.println("========== 영수증 ==========");
+        System.out.println(
+        		"===================================================== "
+        		+ "                                                     \r\n"
+        		+ "                                                      \r\n"
+        		+ "    // | |                                            \r\n"
+        		+ "   //__| |     ___        ___        __         __    \r\n"
+        		+ "  / ___  |   //   ) )   //   ) )   //  ) )   //   ) ) \r\n"
+        		+ " //    | |  //         //   / /   //        //   / /  \r\n"
+        		+ "//     | | ((____     ((___/ /   //        //   / /   ");
+        System.out.println("====================== 영수증 ======================");
         System.out.println("영화: " + movieName);
         System.out.println("상영관: " + theaterName);
         System.out.println("상영시간: " + showTime);
@@ -78,7 +87,7 @@ public class Payment implements ConsolePrint {
         System.out.println("총 가격: " + totalPrice + "원");
         System.out.println("마일리지(" + user.getMileage() + ") 할인: -" + (int)(totalPrice * discount) + "원");
         System.out.println("할인 적용 가격: " + (int)discountedPrice + "원");
-        System.out.println("============================");
+        System.out.println("===================================================");
 
         // 결제 정보를 Pay 객체로 저장
         Pay payInfo = new Pay(movieName, theaterName, showTime, countMap.get("childCount"), countMap.get("youthCount"), countMap.get("adultCount"), totalPrice, (int)discountedPrice);

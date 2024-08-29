@@ -23,14 +23,16 @@ public class Login implements ConsolePrint{
 	Scanner scanner = new Scanner(System.in);
 	@Override
 	public void print() {
-    	System.out.println("acorn에 오신걸 환영합니다");
-    	System.out.println("   메뉴를 선택해주세요   ");
+		System.out.println("╭─────── · · 🎬 · · ───────╮");
+    	System.out.println("   에이콘시어터에 오신걸 환영합니다 ");
+    	System.out.println("╰─────── · · 🎬 · · ───────╯\n");
+    	System.out.println("      -메뉴를 선택해주세요-   ");
     	System.out.println();
     	
-        System.out.println("=======메뉴 선택=======");
+        System.out.println("=========Menu=========");
         System.out.println("    1. 회원 가입       ");
         System.out.println("    2. 로그인         ");
-        System.out.println("=====================");
+        System.out.println("======================");
         int menu = scanner.nextInt();
         if(menu==1 || menu==2) {
         	scanner.nextLine(); 
@@ -167,7 +169,8 @@ public class Login implements ConsolePrint{
                 System.out.println(user);
                 
                 if (user.getPassword().equals(password)) {  // 비밀번호 비교
-                    System.out.println("로그인 성공! 환영합니다, " + user.getName() + "님.");
+                    System.out.println("    로그인 성공!    \n" +
+                                       "환영합니다, " + user.getName() + "님.\n\n");
                     SelectMovie sm= new SelectMovie(user);
                     sm.print();
                 } else {

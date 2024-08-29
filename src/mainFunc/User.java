@@ -29,5 +29,11 @@ public class User {
 	public void setMileage(String mileage) {
 		this.mileage = mileage;
 	}
+	@Override
+	public String toString() {
+		return "";
+	}
+	
+	
 	
 }

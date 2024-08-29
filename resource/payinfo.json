@@ -10,13 +10,13 @@
     "discountedPrice": 14850
   },
   "ssb": {
-    "movieName": "Interstellar",
-    "theaterName": "E",
-    "showTime": "10:00 AM",
-    "childCount": 1,
+    "movieName": "Parasite",
+    "theaterName": "A",
+    "showTime": "05:00 PM",
+    "childCount": 0,
     "youthCount": 0,
-    "adultCount": 0,
-    "totalPrice": 8000,
-    "discountedPrice": 7920
+    "adultCount": 1,
+    "totalPrice": 15000,
+    "discountedPrice": 14850
   }
 }

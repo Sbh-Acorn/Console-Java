@@ -21,7 +21,7 @@ public class SelectMovie implements ConsolePrint {
     @Override
     public void print() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("환영합니다, " + user.getId() + "님!");
+        
 
         while (true) {
             System.out.println("=======메뉴 선택=======");
@@ -50,7 +50,7 @@ public class SelectMovie implements ConsolePrint {
     
     // 영화 선택 및 예매 기능
     private void selectMovie() {
-        System.out.println("영화를 선택해 주세요!");
+        System.out.println("\n\n영화를 선택해 주세요!");
 
         String filePath = "resource/movieinfo.json"; // 파일 경로를 지정하세요.
 
@@ -72,7 +72,7 @@ public class SelectMovie implements ConsolePrint {
 
             if (select > 0 && select <= movieNames.size()) {
                 String selectedMovieName = movieNames.get(select - 1);
-                System.out.println("선택한 영화: " + selectedMovieName);
+                System.out.println("\n선택한 영화: " + selectedMovieName);
                 Movie selectm = movies.get(selectedMovieName);
                 selectm.setMovieName(selectedMovieName);
                 SelectTheather st = new SelectTheather(selectm, user);

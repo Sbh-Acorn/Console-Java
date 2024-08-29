@@ -27,12 +27,12 @@ public class SelectSeat implements ConsolePrint {
         List<int[]> selectedSeats = new ArrayList<>(); // 선택한 좌석들을 저장할 리스트
 
         // 좌석 상태 출력 (초기 상태)
-        System.out.println("현재 좌석 상태:");
+        System.out.println("\n\n현재 좌석 상태:");
         displaySeats(seat.getSeats());
 
         // 좌석 선택 프로세스
         while (true) {
-            System.out.println("예약할 좌석의 행 번호와 열 번호를 입력하세요 (예: 2 3), 또는 '완료'를 입력하세요:");
+            System.out.println("\n예약할 좌석의 행 번호와 열 번호를 입력하세요 (예: 2 3), 또는 '완료'를 입력하세요:");
             String input = sc.nextLine();
 
             if (input.equalsIgnoreCase("완료")) {

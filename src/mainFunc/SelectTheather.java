@@ -37,8 +37,13 @@ public class SelectTheather implements ConsolePrint {
             Type type = new TypeToken<Map<String, Theater>>() {}.getType();
             Map<String, Theater> theaterinfo = gson.fromJson(reader, type);
 
+            System.out.println(
+            		           "장르:" + genre + "\n"  +
+            		           "러닝타임:" + runningTime+"\n");
+            System.out.println("₊*̥ ✶⋆˚₊*̥ ✶⋆˚₊*̥ ✶⋆˚₊*̥ ✶⋆ acorn ‧˚✶₊*̥ ⋆‧˚✶₊*̥ ⋆‧˚✶₊*̥ ⋆˚✶₊*̥ ⋆\n");
             System.out.println(movieName + "이 상영되는 상영관 목록입니다");
-            System.out.println("    영화:" + movieName + "    장르:" + genre + "    러닝타임:" + runningTime);
+
+            
             // 상영관 목록 출력
             for (int i = 0; i < theaters.size(); i++) {
                 String nameTh = theaters.get(i);
