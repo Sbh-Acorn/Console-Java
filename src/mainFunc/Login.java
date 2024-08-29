@@ -14,10 +14,10 @@ import com.google.gson.reflect.TypeToken;
 
 public class Login implements ConsolePrint{
 	
-	public static void main(String[] args) {
-		Login log = new Login();
-		log.print();
-	}
+//	public static void main(String[] args) {
+//		Login log = new Login();
+//		log.print();
+//	}
 	
 	
 	Scanner scanner = new Scanner(System.in);
@@ -54,56 +54,84 @@ public class Login implements ConsolePrint{
 	}
 	
 	public void userJoin() {
-		Login log = new Login();
-		System.out.println("회원가입 시작!");
-        System.out.print("이름을 입력하세요: ");
-        String name = scanner.nextLine();
-        System.out.print("아이디를 입력하세요: ");
-        String id = scanner.nextLine();
-        String password;
-        while (true) {
-            System.out.print("비밀번호를 입력하세요: ");
-            password = scanner.nextLine();
-            System.out.print("비밀번호를 다시 입력하세요: ");
-            String confirmPassword = scanner.nextLine();
-            
-            if (password.equals(confirmPassword)) {
-                break; 
-            } else {
-                System.out.println("비밀번호가 일치하지 않습니다. 다시 시도해 주세요.");
-            }
-        }
-        String mileage = "bronze";
-        User newUser = new User();
-        newUser.setId(id);
-        newUser.setName(name);
-        newUser.setPassword(password);
-        newUser.setMileage(mileage);
-        // 기존 JSON 파일을 읽고 업데이트
-        String filePath = "resource/userinfo.json";  // JSON 파일 경로
+	    Login log = new Login();
+	    System.out.println("회원가입 시작!");
 
-        try {
-            // JSON 파일 읽기
-            FileReader reader = new FileReader(filePath);
-            Gson gson = new Gson();
-            Type type = new TypeToken<Map<String, User>>() {}.getType();
-            Map<String, User> users = gson.fromJson(reader, type);
-            reader.close();
+	    String name;
+	    String id;
+	    String password;
 
-            // 새로운 사용자 추가
-            users.put(newUser.getId(), newUser);  // User 객체의 id를 키로 사용
+	    String filePath = "resource/userinfo.json";  // JSON 파일 경로
+	    Gson gson = new Gson();
+	    Type type = new TypeToken<Map<String, User>>() {}.getType();
+	    Map<String, User> users = null;
 
-            // JSON 파일로 다시 저장
-            Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
-            FileWriter writer = new FileWriter(filePath);
-            prettyGson.toJson(users, writer);
-            writer.close();
+	    try {
+	        // JSON 파일 읽기
+	        FileReader reader = new FileReader(filePath);
+	        users = gson.fromJson(reader, type);
+	        reader.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        System.out.println("회원 정보 파일을 읽는 중 문제가 발생했습니다.");
+	        return;
+	    }
 
-            System.out.println("회원가입이 완료되었습니다!");
-            log.print();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+	    // 사용자 이름과 ID 중복 검사
+	    while (true) {
+	        System.out.print("이름을 입력하세요: ");
+	        name = scanner.nextLine();
+	        System.out.print("아이디를 입력하세요: ");
+	        id = scanner.nextLine();
+
+	        boolean idExists = users != null && users.containsKey(id);
+	        boolean nameExists = users != null && users.values().stream().anyMatch(user -> user.getName().equals(name));
+
+	        if (idExists) {
+	            System.out.println("이미 사용 중인 아이디입니다. 다른 아이디를 입력해주세요.");
+	        } else if (nameExists) {
+	            System.out.println("이미 사용 중인 이름입니다. 다른 이름을 입력해주세요.");
+	        } else {
+	            break;
+	        }
+	    }
+
+	    while (true) {
+	        System.out.print("비밀번호를 입력하세요: ");
+	        password = scanner.nextLine();
+	        System.out.print("비밀번호를 다시 입력하세요: ");
+	        String confirmPassword = scanner.nextLine();
+
+	        if (password.equals(confirmPassword)) {
+	            break;
+	        } else {
+	            System.out.println("비밀번호가 일치하지 않습니다. 다시 시도해 주세요.");
+	        }
+	    }
+
+	    String mileage = "bronze";
+	    User newUser = new User();
+	    newUser.setId(id);
+	    newUser.setName(name);
+	    newUser.setPassword(password);
+	    newUser.setMileage(mileage);
+
+	    // 새로운 사용자 추가
+	    users.put(newUser.getId(), newUser);  // User 객체의 id를 키로 사용
+
+	    try {
+	        // JSON 파일로 다시 저장
+	        Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
+	        FileWriter writer = new FileWriter(filePath);
+	        prettyGson.toJson(users, writer);
+	        writer.close();
+
+	        System.out.println("회원가입이 완료되었습니다!");
+	        log.print();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        System.out.println("회원 정보를 저장하는 중 문제가 발생했습니다.");
+	    }
 	}
 	
 	public void userLogin() {
