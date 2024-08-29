@@ -1,4 +1,4 @@
-package mainFunc;
+package sub;
 
 import java.util.List;
 

@@ -3,9 +3,10 @@ package main;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import mainFunc.Movie1;
-import mainFunc.MovieSelection;
-import mainFunc.Showtime;
+
+import sub.Movie1;
+import sub.MovieSelection;
+import sub.Showtime;
 
 public class MovieReservationSystem {
     public static void main(String[] args) {
