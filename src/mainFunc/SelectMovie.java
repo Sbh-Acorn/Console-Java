@@ -69,6 +69,7 @@ public class SelectMovie implements ConsolePrint {
                 Movie selectm=movies.get(selectedMovieName);
                 selectm.setMovieName(selectedMovieName);
                 SelectTheather st= new SelectTheather(selectm);
+                st.print();
             } else {
                 System.out.println("잘못된 번호입니다.");
             }   

@@ -5,12 +5,12 @@ import java.util.ArrayList;
 
 
 public class Movie {
-	private String movieName;
-    private String movieRating;
-    private String genre;
-	private String runningTime;
-    private String releaseDate;
-    private ArrayList<String> theaters;
+		private String movieName;
+	    private String movieRating;
+	    private String genre;
+		private String runningTime;
+	    private String releaseDate;
+	    private ArrayList<String> theaters;
     
     public String getMovieName() {
 		return movieName;

@@ -125,7 +125,9 @@ public class Login implements ConsolePrint{
             // Map을 순회하며 id와 password 비교
             if (users.containsKey(id)) {  // 입력된 id가 Map에 있는지 확인
                 User user = users.get(id);  // 해당 id의 User 객체 가져오기
+             
                 System.out.println(user);
+                
                 if (user.getPassword().equals(password)) {  // 비밀번호 비교
                     System.out.println("로그인 성공! 환영합니다, " + user.getName() + "님.");
                 } else {

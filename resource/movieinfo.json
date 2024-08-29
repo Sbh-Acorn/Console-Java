@@ -5,8 +5,8 @@
         "runningTime": "148 minutes",
         "releaseDate": "2010-07-16",
         "theaters": [
-            "Theater A",
-            "Theater B"
+            "A",
+            "B"
         ]
     },
     "Parasite": {
@@ -15,8 +15,8 @@
         "runningTime": "132 minutes",
         "releaseDate": "2019-05-30",
         "theaters": [
-            "Theater A",
-            "Theater B"
+            "A",
+            "D"
         ]
     },
     "Interstellar": {
@@ -25,8 +25,8 @@
         "runningTime": "169 minutes",
         "releaseDate": "2014-11-07",
         "theaters": [
-            "Theater A",
-            "Theater B"
+            "C",
+            "E"
         ]
     },
     "The Dark Knight": {
@@ -35,8 +35,8 @@
         "runningTime": "152 minutes",
         "releaseDate": "2008-07-18",
         "theaters": [
-            "Theater A",
-            "Theater B"
+            "A",
+            "D"
         ]
     }
 }

@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class Theater {
     private String theaterName;
-    private int[] tsize;
+    private int[] size;
     private Map<String,String[]> movieAndTime;
     
     public String getTheaterName() {
@@ -15,12 +15,12 @@ public class Theater {
 		this.theaterName = theaterName;
 	}
 
-	public int[] getTsize() {
-		return tsize;
+	public int[] getSize() {
+		return size;
 	}
 
-	public void setTsize(int[] tsize) {
-		this.tsize = tsize;
+	public void setTsize(int[] size) {
+		this.size = size;
 	}
 
 	public Map<String, String[]> getMovieAndTime() {
