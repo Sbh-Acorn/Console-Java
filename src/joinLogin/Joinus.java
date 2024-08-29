@@ -1,6 +1,7 @@
 package joinLogin;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import main.MovieReservationSystem;
@@ -14,7 +15,7 @@ public class Joinus {
     public static void main(String[] args) {
         while (true) {
             System.out.println("에이콘시어터🎬에 오신걸 환영합니다");
-            System.out.println("   메뉴를 선택해주세요   ");
+            System.out.println("  - 메뉴를 선택해주세요 -   ");
             System.out.println();
             
             System.out.println("=======메뉴 선택=======");
@@ -76,31 +77,57 @@ public class Joinus {
     }
 
     private static void registerUser() {
-        System.out.print("이름을 입력하세요: ");
-        String name = scanner.nextLine();
-        System.out.print("아이디를 입력하세요: ");
-        String id = scanner.nextLine();
+    	
+    	
+    	  String id ="";
+    	  String name= "";
+    	  String password="";
+    	  
+    
+	        System.out.print("이름을 입력하세요: ");
+	        name= scanner.nextLine();
+	        System.out.print("아이디를 입력하세요: ");
+	        id = scanner.nextLine();
+	        
+	       
+	        while (true) {
+	            System.out.print("비밀번호를 입력하세요: ");
+	            password = scanner.nextLine();
+	            System.out.print("비밀번호를 다시 입력하세요: ");
+	            String confirmPassword = scanner.nextLine();
+	            
+	            if (password.equals(confirmPassword)) {
+	                break; 
+	            } else {
+	                System.out.println("비밀번호가 일치하지 않습니다. 다시 시도해 주세요.");
+	            }
+	        }
         
-        String password;
-        while (true) {
-            System.out.print("비밀번호를 입력하세요: ");
-            password = scanner.nextLine();
-            System.out.print("비밀번호를 다시 입력하세요: ");
-            String confirmPassword = scanner.nextLine();
-            
-            if (password.equals(confirmPassword)) {
-                break; 
-            } else {
-                System.out.println("비밀번호가 일치하지 않습니다. 다시 시도해 주세요.");
-            }
-        }
+    	 
+    	
+	        
 
         System.out.println("연령대를 선택하세요:");
         System.out.println("1. 성인");
         System.out.println("2. 청소년");
         System.out.println("3. 아이/노인");
-        int ageGroupChoice = scanner.nextInt();
-        scanner.nextLine();  
+        
+        
+        boolean flag=false;
+        int ageGroupChoice =0;
+        while( !flag) {
+        	
+        	try {
+	        	ageGroupChoice = scanner.nextInt();
+		        scanner.nextLine();
+		        flag=true;
+		        
+        	}catch( Exception  e) {        		
+        		
+        		System.out.println(" 숫자로 입력해 주세요");
+        		ageGroupChoice = scanner.nextInt();
+        	}
+        }
 
         User.AgeGroup ageGroup;
         switch (ageGroupChoice) {
