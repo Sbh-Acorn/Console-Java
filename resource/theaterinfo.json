@@ -1,0 +1,37 @@
+{
+    "A": {
+        "size": [5, 5],
+        "movieAndTime": {
+            "Inception": ["10:00 AM", "01:00 PM", "04:00 PM"],
+            "Parasite": ["11:00 AM", "02:00 PM", "05:00 PM"]
+        }
+    },
+    "B": {
+        "size": [7, 8],
+        "movieAndTime": {
+            "Inception": ["09:00 AM", "12:00 PM", "03:00 PM"],
+            "Interstellar": ["10:30 AM", "01:30 PM", "04:30 PM"]
+        }
+    },
+    "C": {
+        "size": [6, 6],
+        "movieAndTime": {
+            "The Dark Knight": ["11:00 AM", "02:00 PM", "05:00 PM"],
+            "Parasite": ["12:00 PM", "03:00 PM", "06:00 PM"]
+        }
+    },
+    "D": {
+        "size": [8, 8],
+        "movieAndTime": {
+            "Interstellar": ["10:00 AM", "01:00 PM", "04:00 PM"],
+            "The Dark Knight": ["11:30 AM", "02:30 PM", "05:30 PM"]
+        }
+    },
+    "E": {
+        "size": [5, 7],
+        "movieAndTime": {
+            "Inception": ["09:30 AM", "12:30 PM", "03:30 PM"],
+            "Interstellar": ["10:00 AM", "01:00 PM", "04:00 PM"]
+        }
+    }
+}

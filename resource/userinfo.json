@@ -1,26 +1,52 @@
 {
-    "user001": {
-        "name": "소병학",
-        "password": "password123!",
-        "grade": "gold",
-        "ageGroup": "성인"
-    },
-    "user002": {
-        "name": "주상길",
-        "password": "securePass456@",
-        "grade": "silver",
-        "ageGroup": "청소년"
-    },
-    "user003": {
-        "name": "전우선",
-        "password": "pass789#",
-        "grade": "bronze",
-        "ageGroup": "아이/노인"
-    },
-    "user004": {
-        "name": "송수빈",
-        "password": "myPass012$",
-        "grade": "gold",
-        "ageGroup": "성인"
-    }
+  "user001": {
+    "name": "소병학",
+    "password": "password123!",
+    "mileage": "gold"
+  },
+  "user002": {
+    "name": "주상길",
+    "password": "securePass456@",
+    "mileage": "silver"
+  },
+  "user003": {
+    "name": "전우선",
+    "password": "pass789#",
+    "mileage": "bronze"
+  },
+  "user004": {
+    "name": "송수빈",
+    "password": "myPass012$",
+    "mileage": "gold"
+  },
+  "111ㅇ": {
+    "id": "111ㅇ",
+    "name": "ㅅㅅㅅ",
+    "password": "12456",
+    "mileage": "bronze"
+  },
+  "lsm": {
+    "id": "lsm",
+    "name": "이상민",
+    "password": "1234",
+    "mileage": "bronze"
+  },
+  "sbh": {
+    "id": "sbh",
+    "name": "소병학",
+    "password": "1234",
+    "mileage": "bronze"
+  },
+  "ssb": {
+    "id": "ssb",
+    "name": "송수빈",
+    "password": "222",
+    "mileage": "bronze"
+  },
+  "sss": {
+    "id": "sss",
+    "name": "소병",
+    "password": "1234",
+    "mileage": "bronze"
+  }
 }

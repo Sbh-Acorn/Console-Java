@@ -3,13 +3,22 @@ package mainFunc;
 import java.util.ArrayList;
 
 
-public class Movie {
-    private String movieRating;
-    private String genre;
-    private String runningTime;
-    private String releaseDate;
-    private ArrayList<String> theaters;
 
+public class Movie {
+		private String movieName;
+	    private String movieRating;
+	    private String genre;
+		private String runningTime;
+	    private String releaseDate;
+	    private ArrayList<String> theaters;
+    
+    public String getMovieName() {
+		return movieName;
+	}
+
+	public void setMovieName(String movieName) {
+		this.movieName = movieName;
+	}
     // Getters and Setters
     public String getMovieRating() {
         return movieRating;
