@@ -1,5 +1,10 @@
 package payment;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
+
 public abstract class Paper implements Printer {
 	
 	public String title;

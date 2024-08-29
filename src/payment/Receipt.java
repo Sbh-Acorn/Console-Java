@@ -1,5 +1,9 @@
 package payment;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
 public class Receipt extends Paper {
 	
 	String title = "영수증";
@@ -15,6 +19,19 @@ public class Receipt extends Paper {
 	public void print() {
 	// TODO Auto-generated method stub
 	
+		String filePath = "resource/receipt.txt";
+		PrintStream ps = null;
+		PrintStream sysout = System.out;
+		FileOutputStream fos = null;
+		
+		try {
+			fos = new FileOutputStream(filePath);
+			ps = new PrintStream(fos);
+			System.setOut(ps);
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+		
 		System.out.println("├-----------------------------------┤");
 		System.out.println("⎮ $$$$$$$$$$$$︎ [" + title + "] $$$$$$$$$$$$︎ ");										//영화 입장권
 		System.out.println("├-----------------------------------┤");
@@ -26,7 +43,7 @@ public class Receipt extends Paper {
 		System.out.println("⎮ 가맹점: " + store_name);		//임시
 		System.out.println("├-----------------------------------┤");
 		
-		
+		System.setOut(sysout);
 	}
 
 }
