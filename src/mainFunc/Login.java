@@ -130,6 +130,8 @@ public class Login implements ConsolePrint{
                 
                 if (user.getPassword().equals(password)) {  // 비밀번호 비교
                     System.out.println("로그인 성공! 환영합니다, " + user.getName() + "님.");
+                    SelectMovie sm= new SelectMovie(user);
+                    sm.print();
                 } else {
                     System.out.println("비밀번호가 일치하지 않습니다. 다시 시도해 주세요.");
                     log.print();
@@ -140,7 +142,6 @@ public class Login implements ConsolePrint{
         }catch (Exception e) {
             e.printStackTrace();
         }
-        SelectMovie sm= new SelectMovie(id);
-        sm.print();
+        
 	}
 }

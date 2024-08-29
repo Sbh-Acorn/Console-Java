@@ -16,9 +16,11 @@ public class SelectTheather implements ConsolePrint {
     private String runningTime;
     private String releaseDate;
     private ArrayList<String> theaters;
+    private User user;
     Scanner sc = new Scanner(System.in);
 
-    public SelectTheather(Movie m) {
+    public SelectTheather(Movie m,User user) {
+    	this.user=user;
         movieName = m.getMovieName();
         movieRating = m.getMovieRating();
         genre = m.getGenre();
@@ -36,7 +38,7 @@ public class SelectTheather implements ConsolePrint {
             Map<String, Theater> theaterinfo = gson.fromJson(reader, type);
 
             System.out.println(movieName + "이 상영되는 상영관 목록입니다");
-
+            System.out.println("    영화:" + movieName + "    장르:" + genre + "    러닝타임:" + runningTime);
             // 상영관 목록 출력
             for (int i = 0; i < theaters.size(); i++) {
                 String nameTh = theaters.get(i);
@@ -47,11 +49,10 @@ public class SelectTheather implements ConsolePrint {
 
                     int[] thsize = th.getSize();
                     String[] times;
-
+                    
                     if (th.getMovieAndTime().containsKey(movieName)) {
                         times = th.getMovieAndTime().get(movieName);
                         System.out.println("\n" + nameTh + "관 총(" + thsize[0] * thsize[1] + ")");
-                        System.out.println("    영화:" + movieName + "    장르:" + genre + "    러닝타임:" + runningTime);
                         System.out.println("\n");
 
                         // 상영 시간 목록 출력
@@ -105,7 +106,13 @@ public class SelectTheather implements ConsolePrint {
             System.out.println("선택한 상영관: " + selectedTheater);
             System.out.println("선택한 시간: " + selectedTimes[selectedTimeIndex]);
             
-            
+            // 선택한 상영관과 시간을 기반으로 Seat 클래스에 정보를 저장
+            Seat seat = new Seat(selectedTheater, selectedTimes[selectedTimeIndex]);
+            seat.saveSeatInfo();  // 좌석 정보를 저장
+
+            // 선택한 상영관과 시간을 기반으로 SelectSeat 호출
+            SelectSeat selectSeat = new SelectSeat(selectedTheater, selectedTimes[selectedTimeIndex],user,movieName);
+            selectSeat.print();  // 좌석 선택 화면으로 이동
         } catch (Exception e) {
             e.printStackTrace();
         }

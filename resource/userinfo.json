@@ -42,5 +42,11 @@
     "name": "송수빈",
     "password": "222",
     "mileage": "bronze"
+  },
+  "sss": {
+    "id": "sss",
+    "name": "소병",
+    "password": "1234",
+    "mileage": "bronze"
   }
 }
