@@ -14,10 +14,10 @@ import com.google.gson.reflect.TypeToken;
 
 public class Login implements ConsolePrint{
 	
-//	public static void main(String[] args) {
-//		Login log = new Login();
-//		log.print();
-//	}
+	public static void main(String[] args) {
+		Login log = new Login();
+		log.print();
+	}
 	
 	
 	Scanner scanner = new Scanner(System.in);
@@ -57,8 +57,8 @@ public class Login implements ConsolePrint{
 	    Login log = new Login();
 	    System.out.println("회원가입 시작!");
 
-	    String name;
-	    String id;
+	    String name = null;
+	    String id = null;
 	    String password;
 
 	    String filePath = "resource/userinfo.json";  // JSON 파일 경로
@@ -85,7 +85,16 @@ public class Login implements ConsolePrint{
 	        id = scanner.nextLine();
 
 	        boolean idExists = users != null && users.containsKey(id);
-	        boolean nameExists = users != null && users.values().stream().anyMatch(user -> user.getName().equals(name));
+	        boolean nameExists = false;
+	        
+	        if (users != null) {
+	            for (User user : users.values()) {
+	                if (user.getName().equals(name)) {
+	                    nameExists = true;
+	                    break;
+	                }
+	            }
+	        }
 
 	        if (idExists) {
 	            System.out.println("이미 사용 중인 아이디입니다. 다른 아이디를 입력해주세요.");
@@ -133,6 +142,7 @@ public class Login implements ConsolePrint{
 	        System.out.println("회원 정보를 저장하는 중 문제가 발생했습니다.");
 	    }
 	}
+
 	
 	public void userLogin() {
 		Login log = new Login();
